@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}ОПЛАТА - IOUHH.DEF{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="payment-info" data-aos="fade-up">
+                <h1 class="text-center" style="font-size: 3rem; font-weight: 800;">{{ service.title }}</h1>
+                <div class="text-center">
+                    <span class="service-price {% if service.price == '0' %}free{% endif %}">
+                        {% if service.price == '0' %}БЕСПЛАТНО{% else %}{{ service.price }}${% endif %}
+                    </span>
+                    {% if service.price != '0' %}
+                    <p style="color: var(--text-dim); margin-top: 10px;">Сумма в рублях: <strong>{{ service.price|int * 100 }} ₽</strong></p>
+                    {% endif %}
+                </div>
+
+                {% if service.price != '0' %}
+                <hr style="border-color: var(--border); margin: 30px 0;">
+
+                <!-- ВКЛАДКИ -->
+                <ul class="nav nav-tabs mb-4" id="paymentTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="crypto-tab" data-bs-toggle="tab" data-bs-target="#crypto">💎 КРИПТА</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="donate-tab" data-bs-toggle="tab" data-bs-target="#donate">⚡ DONATION</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- КРИПТА -->
+                    <div class="tab-pane fade show active" id="crypto">
+                        <div class="text-center">
+                            <h4 style="color: var(--accent); margin-bottom: 20px;">USDT TRC20</h4>
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=USDT%20TRC20%3A%20TGrtRCizSghyrp8pjZsMb5pc31v9JsRfyF"
+                                 alt="QR" class="img-fluid mb-3" style="max-width: 200px;">
+                            <p style="color: var(--text-dim); word-break: break-all; background: var(--primary); padding: 15px; border-radius: 10px;">
+                                TGrtRCizSghyrp8pjZsMb5pc31v9JsRfyF
+                            </p>
+                            <button class="btn-modern-light" onclick="copyToClipboard('TGrtRCizSghyrp8pjZsMb5pc31v9JsRfyF')">
+                                КОПИРОВАТЬ АДРЕС
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- DONATION -->
+                    <div class="tab-pane fade" id="donate">
+                        <div class="text-center">
+                            <h4 style="color: var(--accent); margin-bottom: 20px;">DONATIONALERTS</h4>
+                            <p style="color: var(--text); font-size: 1.3rem;">Сумма: {{ service.price|int * 100 }} ₽</p>
+                            <p style="color: var(--text-dim);">1$ = 100₽</p>
+                            <a href="https://www.donationalerts.com/r/iouhh_def" target="_blank" class="btn-modern">
+                                ПЕРЕЙТИ К ОПЛАТЕ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <hr style="border-color: var(--border); margin: 30px 0;">
+
+                <h4 style="color: var(--accent); text-align: center; margin-bottom: 20px;">ПОСЛЕ ОПЛАТЫ</h4>
+                <div style="text-align: center; color: var(--text-dim);">
+                    <p>1. Сделай скриншот</p>
+                    <p>2. Напиши @Iouhh_def</p>
+                    <p>3. Получи услугу</p>
+                </div>
+
+                <!-- ДЛЯ Д3Ф: ДОПОЛНИТЕЛЬНОЕ СООБЩЕНИЕ -->
+                {% if service.title == 'Д3Ф' %}
+                <div style="text-align: center; margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(255,0,0,0.1), rgba(255,255,255,0.1)); border: 1px solid var(--accent); border-radius: 10px;">
+                    <p style="color: var(--accent); font-size: 1.2rem; font-weight: 700; margin: 0;">
+                        ⚡ ВАЖНО: Д3Ф ДЕЙСТВУЕТ НАВСЕГДА
+                    </p>
+                    <p style="color: var(--text-dim); margin: 5px 0 0 0;">
+                        После активации вы получаете ПОЖИЗНЕННУЮ защиту от любых преследователей
+                    </p>
+                </div>
+                {% endif %}
+
+                <div class="text-center mt-4">
+                    <a href="https://t.me/Iouhh_def" target="_blank" class="btn-modern">@Iouhh_def</a>
+                </div>
+
+                <div class="text-center mt-4">
+                    <p style="color: var(--accent);">✅ ГАРАНТИЯ ВОЗВРАТА ПРИ НЕВЫПОЛНЕНИИ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+    alert('✅ Адрес скопирован!');
+}
+</script>
+{% endblock %}

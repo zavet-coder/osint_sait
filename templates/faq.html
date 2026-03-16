@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ - IOUHH.DEF{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <h1 class="text-center mb-5" style="font-size: 4rem; font-weight: 800;" data-aos="fade-up">ЧАСТЫЕ ВОПРОСЫ</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+                {% for faq in faqs %}
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button {% if not loop.first %}collapsed{% endif %}"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ loop.index }}">
+                            {{ faq.q }}
+                        </button>
+                    </h2>
+                    <div id="faq{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            {{ faq.a }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Информация о возврате -->
+<section class="container py-5">
+    <div class="payment-info text-center">
+        <h4>ГАРАНТИЯ ВОЗВРАТА</h4>
+        <p style="color: var(--text-dim); font-size: 1.2rem; margin: 20px 0;">
+            ✅ Если услуга не будет выполнена — мы вернем 100% оплаты
+        </p>
+        <p style="color: var(--accent); font-size: 1.1rem;">
+            Никаких рисков. Ты платишь только за результат.
+        </p>
+    </div>
+</section>
+
+<!-- Быстрая связь -->
+<section class="container pb-5">
+    <div class="payment-info text-center">
+        <h4>ОСТАЛИСЬ ВОПРОСЫ?</h4>
+        <p style="color: var(--text-dim); font-size: 1.2rem; margin: 20px 0;">
+            Напиши нам в Telegram — ответим в течение 5-30 минут
+        </p>
+        <a href="https://t.me/Iouhh_def" target="_blank" class="btn-modern">НАПИСАТЬ В TELEGRAM</a>
+    </div>
+</section>
+{% endblock %}

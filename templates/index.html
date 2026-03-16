@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}IOUHH.DEF - Защита и безопасность{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<section class="hero-section">
+    <div class="container text-center">
+        <h1 class="hero-title" data-aos="fade-up">IOUHH.DEF</h1>
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+            Защита от преследования • Деанон • Сваттинг
+        </p>
+        <div data-aos="fade-up" data-aos-delay="400">
+            <a href="{{ url_for('services') }}" class="btn-modern">НАШИ УСЛУГИ</a>
+        </div>
+    </div>
+</section>
+
+<!-- УСЛУГИ ПРЕВЬЮ -->
+<section class="container py-5">
+    <h2 class="text-center mb-5" style="font-size: 3rem; font-weight: 800;" data-aos="fade-up">УСЛУГИ</h2>
+
+    <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card text-center">
+                <div class="service-icon">🛡️</div>
+                <h3 class="service-title">Д3Ф</h3>
+                <p class="text-gray">Защита от преследования</p>
+                <div class="service-price">10$</div>
+                <a href="{{ url_for('payment', service_id='def') }}" class="btn-modern-light mt-3">ОПЛАТИТЬ</a>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="service-card text-center">
+                <div class="service-icon">📢</div>
+                <h3 class="service-title">Д0Н0С</h3>
+                <p class="text-gray">Информационная атака</p>
+                <div class="service-price">7$</div>
+                <a href="{{ url_for('payment', service_id='donos') }}" class="btn-modern-light mt-3">ОПЛАТИТЬ</a>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card text-center">
+                <div class="service-icon">🔍</div>
+                <h3 class="service-title">Д3АН0Н</h3>
+                <p class="text-gray">Поиск информации</p>
+                <div class="service-price">3$ / 5$</div>
+                <a href="{{ url_for('services') }}" class="btn-modern-light mt-3">ПОДРОБНЕЕ</a>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="service-card text-center">
+                <div class="service-icon">💣</div>
+                <h3 class="service-title">СВ1ТТИНГ</h3>
+                <p class="text-gray">Ложное минирование</p>
+                <div class="service-price">20$</div>
+                <a href="{{ url_for('payment', service_id='swat') }}" class="btn-modern-light mt-3">ОПЛАТИТЬ</a>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card text-center free">
+                <div class="service-icon">🎁</div>
+                <h3 class="service-title">Д3Ф БЕСПЛАТНО</h3>
+                <p class="text-gray">Для новых клиентов</p>
+                <div class="service-price free">0$</div>
+                <a href="https://t.me/Iouhh_def" target="_blank" class="btn-modern-light mt-3">ПОЛУЧИТЬ</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ПРЕИМУЩЕСТВА -->
+<section class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in">
+            <div class="service-card text-center">
+                <i class="bi bi-shield-check" style="font-size: 3rem; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 20px 0;">100% АНОНИМНО</h4>
+                <p style="color: var(--text-dim);">Мы не храним логи</p>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-card text-center">
+                <i class="bi bi-lightning-charge" style="font-size: 3rem; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 20px 0;">БЫСТРО</h4>
+                <p style="color: var(--text-dim);">От 5 минут</p>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-card text-center">
+                <i class="bi bi-lock" style="font-size: 3rem; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                <h4 style="font-size: 1.5rem; font-weight: 700; margin: 20px 0;">ГАРАНТИЯ</h4>
+                <p style="color: var(--text-dim);">Возврат при невыполнении</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ГАРАНТИЯ -->
+<section class="container py-5">
+    <div class="payment-info text-center">
+        <h4>ГАРАНТИЯ ВОЗВРАТА</h4>
+        <p style="color: var(--text-dim); font-size: 1.2rem; margin: 20px 0;">
+            ✅ Если услуга не будет выполнена — мы вернем 100% оплаты
+        </p>
+        <a href="{{ url_for('faq') }}" class="btn-modern-light">ПОДРОБНЕЕ</a>
+    </div>
+</section>
+{% endblock %}
