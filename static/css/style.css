@@ -1,15 +1,14 @@
-/* ========== НОВЫЙ МИНИМАЛИСТИЧНЫЙ СТИЛЬ ========== */
+/* ========== DOXBIN СТИЛЬ ========== */
 :root {
-    --bg-primary: #0a0c0f;
-    --bg-secondary: #14181c;
-    --bg-card: #1e2329;
-    --accent: #ff4d4d;
-    --accent-hover: #ff6666;
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
     --text-primary: #ffffff;
-    --text-secondary: #9aa4b3;
-    --text-muted: #6c7a8d;
-    --border: #2a313c;
-    --glow: rgba(255, 77, 77, 0.15);
+    --text-secondary: #cccccc;
+    --text-muted: #666666;
+    --border: #333333;
+    --accent: #ffffff;
+    --link: #cccccc;
+    --link-hover: #ffffff;
 }
 
 * {
@@ -19,87 +18,53 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Courier New', 'Lucida Console', monospace;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.5;
     min-height: 100vh;
-    padding-top: 80px;
-}
-
-/* ГРАДИЕНТНЫЙ ФОН */
-.glow-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 30%, rgba(255, 77, 77, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
+    padding-top: 70px;
+    font-size: 14px;
 }
 
 /* НАВИГАЦИЯ */
 .navbar {
-    background-color: var(--bg-secondary) !important;
+    background-color: var(--bg-primary) !important;
     border-bottom: 1px solid var(--border);
     padding: 15px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    background-color: rgba(20, 24, 28, 0.95) !important;
 }
 
 .navbar-brand {
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
     color: var(--text-primary) !important;
-    transition: color 0.2s ease;
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
 }
 
 .navbar-brand:hover {
-    color: var(--accent) !important;
+    color: var(--text-secondary) !important;
 }
 
 .nav-link {
     color: var(--text-secondary) !important;
-    margin: 0 12px;
-    font-weight: 500;
-    font-size: 0.95rem;
+    margin: 0 10px;
     text-transform: uppercase;
+    font-size: 0.9rem;
     letter-spacing: 1px;
-    transition: color 0.2s ease;
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent);
-    transition: width 0.2s ease;
+    font-family: 'Courier New', monospace;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--text-primary) !important;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+    text-decoration: underline;
 }
 
 .navbar-toggler {
     border: 1px solid var(--border);
-    background-color: var(--bg-card);
+    background-color: var(--bg-primary);
 }
 
 .navbar-toggler-icon {
@@ -108,225 +73,211 @@ body {
 
 /* HERO СЕКЦИЯ */
 .hero-section {
-    padding: 80px 0;
-    position: relative;
-    text-align: center;
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
 }
 
 .hero-title {
-    font-size: 4.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    line-height: 1.1;
+    font-size: 4rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 4px;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-family: 'Courier New', monospace;
 }
 
 .hero-subtitle {
     color: var(--text-secondary);
-    font-size: 1.2rem;
+    font-size: 1rem;
     max-width: 600px;
     margin: 0 auto 30px;
+    line-height: 1.8;
 }
 
-/* КАРТОЧКИ УСЛУГ */
+/* КАРТОЧКИ */
 .service-card {
-    background-color: var(--bg-card);
+    background-color: var(--bg-primary);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 30px;
-    transition: all 0.3s ease;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 0;
-    background-color: var(--accent);
-    transition: height 0.3s ease;
+    padding: 25px;
+    margin-bottom: 20px;
 }
 
 .service-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 12px 30px var(--glow);
-}
-
-.service-card:hover::before {
-    height: 100%;
+    border-color: var(--text-primary);
 }
 
 .service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--accent);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-secondary);
 }
 
 .service-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
 }
 
 .service-subtitle {
-    color: var(--accent);
-    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .service-description {
     color: var(--text-secondary);
-    margin-bottom: 20px;
-    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
 }
 
 .service-price {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin: 20px 0;
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin: 15px 0;
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
 }
 
 .service-features {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 15px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 15px 0;
 }
 
 .service-features li {
     color: var(--text-secondary);
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid var(--border);
+    padding: 5px 0;
+    font-size: 0.9rem;
 }
 
 .service-features li::before {
-    content: '→';
-    color: var(--accent);
-    font-weight: bold;
+    content: '>';
+    margin-right: 10px;
+    color: var(--text-primary);
 }
 
 .service-note {
-    background-color: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 8px;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 15px;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* КНОПКИ */
 .btn-modern {
     background-color: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 12px 32px;
-    font-weight: 600;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 10px 25px;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     text-decoration: none;
     display: inline-block;
-    cursor: pointer;
+    font-family: 'Courier New', monospace;
 }
 
 .btn-modern:hover {
-    background-color: var(--accent);
+    border-color: var(--text-primary);
     color: var(--text-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px var(--glow);
 }
 
 .btn-modern-light {
     background-color: transparent;
     border: 1px solid var(--text-secondary);
     color: var(--text-secondary);
-    padding: 10px 24px;
-    font-weight: 500;
-    border-radius: 30px;
-    transition: all 0.3s ease;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
     text-decoration: none;
     display: inline-block;
+    font-family: 'Courier New', monospace;
 }
 
 .btn-modern-light:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--text-primary);
+    color: var(--text-primary);
 }
 
 /* ПЛАТЕЖИ */
 .payment-info {
-    background-color: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 40px;
+    padding: 30px;
     margin: 20px 0;
+    background-color: var(--bg-primary);
 }
 
 .payment-info h4 {
-    color: var(--accent);
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
 }
 
 /* ВКЛАДКИ */
 .nav-tabs {
-    border: none;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
 }
 
 .nav-tabs .nav-link {
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    padding: 10px 30px;
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
     color: var(--text-secondary);
-    font-weight: 500;
-    transition: all 0.3s ease;
+    font-weight: normal;
+    transition: all 0.2s ease;
     background-color: transparent;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
 
 .nav-tabs .nav-link.active {
-    background-color: var(--accent);
-    border-color: var(--accent);
+    background-color: transparent;
     color: var(--text-primary);
+    border-bottom: 1px solid var(--text-primary);
 }
 
 /* FAQ */
 .accordion-item {
-    background-color: var(--bg-card);
+    background-color: var(--bg-primary);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .accordion-button {
-    background-color: var(--bg-card);
+    background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-weight: 600;
-    padding: 20px 25px;
-    border-radius: 12px !important;
+    font-weight: normal;
+    padding: 15px 20px;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 0 !important;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: var(--bg-card);
-    color: var(--accent);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 .accordion-button::after {
@@ -334,28 +285,26 @@ body {
 }
 
 .accordion-body {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     color: var(--text-secondary);
-    padding: 20px 25px;
+    padding: 20px;
     border-top: 1px solid var(--border);
-    border-radius: 0 0 12px 12px;
+    font-size: 0.9rem;
 }
 
 /* КОНТАКТЫ */
 .contact-card {
-    background-color: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 40px;
+    padding: 30px;
+    background-color: var(--bg-primary);
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 15px;
+    gap: 15px;
+    padding: 12px;
     border-bottom: 1px solid var(--border);
-    transition: background-color 0.2s ease;
 }
 
 .contact-item:hover {
@@ -363,50 +312,52 @@ body {
 }
 
 .contact-icon {
-    width: 40px;
-    height: 40px;
-    background-color: var(--accent);
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-primary);
-    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
 }
 
 .contact-info h5 {
-    color: var(--accent);
-    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
+    font-weight: normal;
 }
 
 .contact-info p,
 .contact-info a {
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0;
     text-decoration: none;
 }
 
 .contact-info a:hover {
-    color: var(--accent);
+    text-decoration: underline;
 }
 
 /* FOOTER */
 footer {
-    background-color: var(--bg-secondary);
     border-top: 1px solid var(--border);
-    padding: 60px 0 30px;
-    margin-top: 60px;
+    padding: 40px 0 20px;
+    margin-top: 40px;
+    background-color: var(--bg-primary);
 }
 
 footer h5 {
     color: var(--text-primary);
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
 }
 
 footer a {
@@ -414,41 +365,37 @@ footer a {
     text-decoration: none;
     transition: color 0.2s ease;
     line-height: 2;
+    font-size: 0.85rem;
 }
 
 footer a:hover {
-    color: var(--accent);
+    color: var(--text-primary);
+    text-decoration: underline;
 }
 
 footer hr {
     border-color: var(--border);
-    margin: 40px 0;
+    margin: 30px 0;
 }
 
-/* АНИМАЦИИ */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* УТИЛИТЫ */
+.text-muted-custom {
+    color: var(--text-secondary);
 }
 
-.animate-fade-in {
-    animation: fadeIn 0.6s ease forwards;
+.border-custom {
+    border: 1px solid var(--border);
 }
 
 /* АДАПТИВНОСТЬ */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
     }
 
     .navbar-nav {
-        margin-top: 15px;
+        margin-top: 10px;
     }
 
     .nav-link {
@@ -457,10 +404,6 @@ footer hr {
     }
 
     .service-card {
-        margin-bottom: 20px;
-    }
-
-    .contact-card {
-        padding: 25px;
+        margin-bottom: 15px;
     }
 }

@@ -1,53 +1,54 @@
 {% extends "base.html" %}
 
-{% block title %}7OUH.DEF - Защита и безопасность{% endblock %}
+{% block title %}7OUH.DEF{% endblock %}
 
 {% block content %}
 <!-- HERO -->
 <section class="hero-section">
-    <div class="container">
-        <h1 class="hero-title" data-aos="fade-up">7OUH.DEF</h1>
-        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-            Защита от преследования • Деанон • Сваттинг
+    <div class="container text-center">
+        <h1 class="hero-title">7OUH.DEF</h1>
+        <p class="hero-subtitle">
+            [ ЗАЩИТА ОТ ПРЕСЛЕДОВАНИЯ ]<br>
+            [ ДЕАНОН ]<br>
+            [ ДОНОС ]<br>
+            [ СВАТТИНГ ]
         </p>
-        <div data-aos="fade-up" data-aos-delay="200">
-            <a href="{{ url_for('services') }}" class="btn-modern">Наши услуги</a>
-        </div>
+        <a href="{{ url_for('services') }}" class="btn-modern">УСЛУГИ</a>
     </div>
 </section>
 
-<!-- УСЛУГИ ПРЕВЬЮ -->
+<!-- УСЛУГИ -->
 <section class="container py-5">
-    <h2 class="text-center mb-5" style="font-size: 2.5rem; font-weight: 700;" data-aos="fade-up">Услуги</h2>
+    <h2 class="text-center mb-4" style="font-family: 'Courier New', monospace; text-transform: uppercase;">УСЛУГИ</h2>
 
     <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-4">
             <div class="service-card text-center">
                 <div class="service-icon">🛡️</div>
                 <h3 class="service-title">Д3Ф</h3>
                 <p class="service-description">Защита от преследования</p>
                 <div class="service-price">10$</div>
-                <a href="{{ url_for('payment', service_id='def') }}" class="btn-modern-light">Оплатить</a>
+                <a href="{{ url_for('payment', service_id='def') }}" class="btn-modern-light">ОПЛАТИТЬ</a>
             </div>
         </div>
 
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-4">
             <div class="service-card text-center">
                 <div class="service-icon">🔍</div>
                 <h3 class="service-title">Д3АН0Н</h3>
                 <p class="service-description">Поиск информации</p>
                 <div class="service-price">3$ / 5$</div>
-                <a href="{{ url_for('services') }}" class="btn-modern-light">Подробнее</a>
+                <a href="{{ url_for('services') }}" class="btn-modern-light">ПОДРОБНЕЕ</a>
             </div>
         </div>
 
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-md-4">
             <div class="service-card text-center">
                 <div class="service-icon">📢</div>
                 <h3 class="service-title">Д0Н0С</h3>
                 <p class="service-description">Информационная атака</p>
                 <div class="service-price">7$</div>
-                <a href="{{ url_for('payment', service_id='donos') }}" class="btn-modern-light">Оплатить</a>
+                <a href="{{ url_for('payment', service_id='donos') }}" class="btn-modern-light">ОПЛАТИТЬ</a>
             </div>
         </div>
     </div>
@@ -56,24 +57,21 @@
 <!-- ПРЕИМУЩЕСТВА -->
 <section class="container py-5">
     <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up">
+        <div class="col-md-4">
             <div class="service-card text-center">
-                <i class="bi bi-shield-check" style="font-size: 2rem; color: var(--accent);"></i>
-                <h4 style="font-size: 1.3rem; margin: 15px 0;">100% Анонимно</h4>
+                <h4 style="font-size: 1.2rem; margin-bottom: 10px;">100% АНОНИМНО</h4>
                 <p style="color: var(--text-secondary);">Мы не храним логи</p>
             </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-4">
             <div class="service-card text-center">
-                <i class="bi bi-lightning-charge" style="font-size: 2rem; color: var(--accent);"></i>
-                <h4 style="font-size: 1.3rem; margin: 15px 0;">Быстро</h4>
+                <h4 style="font-size: 1.2rem; margin-bottom: 10px;">БЫСТРО</h4>
                 <p style="color: var(--text-secondary);">От 5 минут</p>
             </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-md-4">
             <div class="service-card text-center">
-                <i class="bi bi-lock" style="font-size: 2rem; color: var(--accent);"></i>
-                <h4 style="font-size: 1.3rem; margin: 15px 0;">Гарантия</h4>
+                <h4 style="font-size: 1.2rem; margin-bottom: 10px;">ГАРАНТИЯ</h4>
                 <p style="color: var(--text-secondary);">Возврат при невыполнении</p>
             </div>
         </div>
