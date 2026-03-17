@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 
-{% block title %}УСЛУГИ - IOUHH.DEF{% endblock %}
+{% block title %}Услуги - 7OUH.DEF{% endblock %}
 
 {% block content %}
 <section class="container py-5">
-    <h1 class="text-center mb-5" style="font-size: 4rem; font-weight: 800;" data-aos="fade-up">УСЛУГИ</h1>
+    <h1 class="text-center mb-5" style="font-size: 3rem; font-weight: 700;" data-aos="fade-up">Услуги</h1>
 
     <div class="row g-4">
         {% for service in services %}
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="{{ loop.index * 50 }}">
             <div class="service-card">
                 <div class="d-flex align-items-center gap-3 mb-3">
-                    <span style="font-size: 3rem;">{{ service.icon }}</span>
+                    <span class="service-icon">{{ service.icon }}</span>
                     <div>
                         <h3 class="service-title">{{ service.title }}</h3>
-                        <span class="service-subtitle">{{ service.subtitle }}</span>
+                        <div class="service-subtitle">{{ service.subtitle }}</div>
                     </div>
                 </div>
 
-                <p style="color: var(--text-dim); font-size: 1.1rem;">{{ service.description }}</p>
+                <p class="service-description">{{ service.description }}</p>
 
-                <h4 style="color: var(--accent); font-size: 1.1rem; margin: 20px 0 10px;">[ ЧТО ВХОДИТ ]</h4>
+                <h5 style="color: var(--accent); margin: 20px 0 10px;">Что входит:</h5>
                 <ul class="service-features">
                     {% for feature in service.features %}
                     <li>{{ feature }}</li>
@@ -34,14 +34,8 @@
                 {% endif %}
 
                 <div class="d-flex justify-content-between align-items-center mt-4">
-                    <span class="service-price {% if service.price == '0' %}free{% endif %}">
-                        {% if service.price == '0' %}БЕСПЛАТНО{% else %}{{ service.price }}${% endif %}
-                    </span>
-                    {% if service.price != '0' %}
-                    <a href="{{ url_for('payment', service_id=service.id) }}" class="btn-modern">ОПЛАТИТЬ</a>
-                    {% else %}
-                    <a href="https://t.me/Iouhh_def" target="_blank" class="btn-modern">ПОЛУЧИТЬ</a>
-                    {% endif %}
+                    <span class="service-price">{{ service.price }}$</span>
+                    <a href="{{ url_for('payment', service_id=service.id) }}" class="btn-modern">Оплатить</a>
                 </div>
             </div>
         </div>
@@ -52,31 +46,31 @@
 <!-- СПОСОБЫ ОПЛАТЫ -->
 <section class="container py-5">
     <div class="payment-info text-center">
-        <h4>СПОСОБЫ ОПЛАТЫ</h4>
+        <h4>Способы оплаты</h4>
         <div class="row g-4 mt-4">
             <div class="col-md-6">
-                <div style="background: var(--primary); padding: 30px; border-radius: 20px;">
-                    <h5 style="color: var(--accent); font-size: 1.3rem;">💎 USDT TRC20</h5>
-                    <p style="color: var(--text-dim); word-break: break-all; margin: 15px 0;">TGrtRCizSghyrp8pjZsMb5pc31v9JsRfyF</p>
-                    <button class="btn-modern-light" onclick="copyToClipboard('TGrtRCizSghyrp8pjZsMb5pc31v9JsRfyF')">КОПИРОВАТЬ</button>
+                <div style="background-color: var(--bg-secondary); padding: 30px; border-radius: 16px;">
+                    <h5 style="color: var(--accent); margin-bottom: 15px;">💎 USDT TRC20</h5>
+                    <p style="color: var(--text-secondary); word-break: break-all;">TGrtRCizSghyrp8pjZsMb5pc31v9JsRfyF</p>
+                    <button class="btn-modern-light" onclick="copyToClipboard('TGrtRCizSghyrp8pjZsMb5pc31v9JsRfyF')">Копировать</button>
                 </div>
             </div>
             <div class="col-md-6">
-                <div style="background: var(--primary); padding: 30px; border-radius: 20px;">
-                    <h5 style="color: var(--accent); font-size: 1.3rem;">⚡ DONATIONALERTS</h5>
-                    <p style="color: var(--text-dim); margin: 15px 0;">1$ = 100₽</p>
-                    <a href="https://www.donationalerts.com/r/iouhh_def" target="_blank" class="btn-modern-light">ПЕРЕЙТИ</a>
+                <div style="background-color: var(--bg-secondary); padding: 30px; border-radius: 16px;">
+                    <h5 style="color: var(--accent); margin-bottom: 15px;">⚡ DonationAlerts</h5>
+                    <p style="color: var(--text-secondary);">1$ = 100₽</p>
+                    <a href="https://www.donationalerts.com/r/iouhh_def" target="_blank" class="btn-modern-light">Перейти</a>
                 </div>
             </div>
         </div>
-        <p style="color: var(--accent); font-size: 1.2rem; margin-top: 30px;">ПОСЛЕ ОПЛАТЫ ПИШИ @Iouhh_def</p>
+        <p style="color: var(--accent); margin-top: 30px;">После оплаты пиши @Iouhh_def</p>
     </div>
 </section>
 
 <script>
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
-    alert('✅ Адрес скопирован!');
+    alert('✅ Адрес скопирован');
 }
 </script>
 {% endblock %}
